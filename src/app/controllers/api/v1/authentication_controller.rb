@@ -1,12 +1,18 @@
-# app/controllers/api/v1/authentication_controller.rb
 class Api::V1::AuthenticationController < ApplicationController
+  skip_before_action :authorize_request, only: :login
+
   def login
-    # ログイン処理を実装する
-    render json: { message: 'ログイン' }
+    @user = User.find_by_email(params[:email])
+    if @user&.authenticate(params[:password])
+      token = JsonWebToken.encode(user_id: @user.id)
+      render json: { token: token, user: { id: @user.id } }, status: :ok
+    else
+      render json: { error: 'unauthorized' }, status: :unauthorized
+    end
   end
 
   def logout
-    # ログアウト処理を実装する
-    render json: { message: 'ログアウト' }
+    # クライアント側でトークンを破棄するため、サーバー側では特に処理は不要
+    render json: { message: 'ログアウトしました' }, status: :ok
   end
 end
