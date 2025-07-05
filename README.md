@@ -63,8 +63,9 @@ https://next-rails-work-frontend-page-router.vercel.app
 * **バックエンド:** Ruby on Rails (APIモード)
 * **データベース:** MySql (開発環境、本番環境)
 * **APIテスト:** Postman
-* **デプロイ:** Heroku（Dockerコンテナを丸ごとデプロイするため、、）, Vercel　
-* **その他:** Git, GitHub, Docker
+* **デプロイ:** Vercel, Heroku(Dockerコンテナを丸ごとデプロイするため、、)
+* **クラウドストレージ:** aws S3(デプロイ先の画像の保存先として、、)
+* **その他:** Git, GitHub, Docker(デプロイ先でDBの差異で画像がアップロードできない問題が起こったため、ローカルと本番環境の差異をなくすために導入した、、)
 
 ## 主な機能
 * 求人情報管理 (CRUD + フィルター + いいね)
