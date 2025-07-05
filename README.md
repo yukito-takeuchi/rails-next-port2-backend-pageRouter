@@ -61,9 +61,9 @@ https://next-rails-work-frontend-page-router.vercel.app
 ## 技術スタック
 * **フロントエンド:** Next.js (TypeScript), Tailwind CSS, shadcn-ui
 * **バックエンド:** Ruby on Rails (APIモード)
-* **データベース:** SQLite (開発環境), PostgreSQL (本番環境)
+* **データベース:** MySql (開発環境、本番環境)
 * **APIテスト:** Postman
-* **デプロイ:** Render, Vercel
+* **デプロイ:** Heroku（Dockerコンテナを丸ごとデプロイするため、、）, Vercel　
 * **その他:** Git, GitHub, Docker
 
 ## 主な機能
